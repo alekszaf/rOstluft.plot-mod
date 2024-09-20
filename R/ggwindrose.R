@@ -121,7 +121,7 @@ ggwindrose <- function(data, ws, wd,
   plot <- ggplot(data_summarized, aes(x = !!wd, y = .data$freq, fill = !!ws)) +
     bar_layer +
     coord_polar2(start = -2 * pi / 360 * wd_binwidth / 2, bg = bg) +
-    scale_x_discrete(breaks = wd_breaks, labels = c("N", "O", "S", "W"), expand = xexpand, drop = FALSE) +
+    scale_x_discrete(breaks = wd_breaks, labels = c("N", "E", "S", "W"), expand = xexpand, drop = FALSE) +
     scale_y_continuous(limits = c(0, NA), expand = expansion(), labels = scales::percent) +
     fill_scale +
     guides(fill = guide_legend(title = rlang::quo_text(ws), reverse = !reverse)) +
@@ -246,7 +246,7 @@ ggwindrose2 <- function(data, ws, wd,
   plot <- ggplot(data_summarized, aes(x = !!wd, y = .data$freq, fill = !!ws)) +
     coord_polar2(start = -2 * pi / 360 * wd_binwidth / 2, bg = bg) +
     bar_layer +
-    scale_x_discrete(breaks = wd_breaks, labels = c("N", "O", "S", "W"), expand = xexpand, drop = FALSE) +
+    scale_x_discrete(breaks = wd_breaks, labels = c("N", "E", "S", "W"), expand = xexpand, drop = FALSE) +
     scale_y_continuous(
       limits = c(0, NA),
       expand = yexpand,
